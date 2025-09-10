@@ -1,0 +1,29 @@
+name: desktop_file_system
+description: "Utils to perform file system operations on desktop."
+version: 0.0.1
+publish_to: 'none'
+homepage:
+
+environment:
+  sdk: ^3.1.0
+  flutter: ^3.35.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_rust_bridge: 2.11.1
+  rust_lib_desktop_file_system:
+    path: rust_builder
+  freezed_annotation:
+  meta:
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  integration_test:
+    sdk: flutter
+  freezed:
+  build_runner:
+
+flutter:

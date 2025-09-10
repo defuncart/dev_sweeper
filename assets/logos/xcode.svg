@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="190.761 115.756 82.4855 115" width="82.4855px" height="115px">
+  <radialGradient id="xcode-original-N" cx="51.211" cy="114.953" r="7.901" gradientTransform="matrix(0.8979, 0.4402, -0.2506, 0.5111, 181.005886, 143.918247)" gradientUnits="userSpaceOnUse">
+    <stop offset="0.417" stop-color="#0c0c12"/>
+    <stop offset="1" stop-color="#3d4651"/>
+  </radialGradient>
+  <linearGradient id="xcode-original-O" gradientUnits="userSpaceOnUse" x1="84.758" y1="39.174" x2="94.522" y2="44.149" gradientTransform="matrix(1, 0, 0, 1, 146.973881, 110.256248)">
+    <stop offset="0" stop-color="#344351"/>
+    <stop offset="0.1" stop-color="#9697a0"/>
+    <stop offset="0.181" stop-color="#8b8c95"/>
+    <stop offset="0.351" stop-color="#787a83"/>
+    <stop offset="0.47" stop-color="#71747d"/>
+    <stop offset="0.591" stop-color="#777982"/>
+    <stop offset="0.749" stop-color="#87898f"/>
+    <stop offset="0.8" stop-color="#8e8f94"/>
+    <stop offset="0.849" stop-color="#3d3b42"/>
+    <stop offset="0.9" stop-color="#606e84"/>
+  </linearGradient>
+  <linearGradient id="xcode-original-P" gradientUnits="userSpaceOnUse" x1="117.884" y1="29.257" x2="106.863" y2="14.364" gradientTransform="matrix(1, 0, 0, 1, 146.973881, 110.256248)">
+    <stop offset="0.27" stop-color="#262b33"/>
+    <stop offset="0.45" stop-color="#74747e"/>
+    <stop offset="0.54" stop-color="#b0b0bc"/>
+    <stop offset="0.73" stop-color="#74747e"/>
+  </linearGradient>
+  <linearGradient id="xcode-original-Q" gradientUnits="userSpaceOnUse" x1="98.542" y1="30.424" x2="114.815" y2="28.322" gradientTransform="matrix(1, 0, 0, 1, 146.973881, 110.256248)">
+    <stop offset="0.14" stop-color="#606e84"/>
+    <stop offset="0.4" stop-color="#9899a5"/>
+    <stop offset="0.73" stop-color="#475768"/>
+    <stop offset="0.92" stop-color="#262b33"/>
+  </linearGradient>
+  <linearGradient id="xcode-original-R" gradientUnits="userSpaceOnUse" x1="106.128" y1="31.808" x2="104.549" y2="22.854" gradientTransform="matrix(1, 0, 0, 1, 146.973881, 110.256248)">
+    <stop offset="0" stop-color="#101215" stop-opacity=".1"/>
+    <stop offset="0.46" stop-color="#101215" stop-opacity=".7"/>
+    <stop offset="0.7" stop-color="#474951"/>
+    <stop offset="0.91" stop-color="#7b7d88"/>
+  </linearGradient>
+  <linearGradient id="xcode-original-S" gradientUnits="userSpaceOnUse" x1="58.131" y1="81.721" x2="73.237" y2="89.154" gradientTransform="matrix(1, 0, 0, 1, 146.973881, 110.256248)">
+    <stop offset="0.115" stop-color="#2c3952"/>
+    <stop offset="0.374" stop-color="#3d414e"/>
+    <stop offset="0.55" stop-color="#474a54"/>
+    <stop offset="0.754" stop-color="#4e5057"/>
+    <stop offset="0.892" stop-color="#323945"/>
+    <stop offset="1" stop-color="#143052"/>
+  </linearGradient>
+  <linearGradient id="xcode-original-T" gradientUnits="userSpaceOnUse" x1="81.508" y1="31.679" x2="93.19" y2="6.047" gradientTransform="matrix(1, 0, 0, 1, 146.973881, 110.256248)">
+    <stop offset="0.118" stop-color="#6d7078" stop-opacity="0"/>
+    <stop offset="0.2" stop-color="#6d7078" stop-opacity=".7"/>
+    <stop offset="0.34" stop-color="#35363a"/>
+    <stop offset="0.374" stop-color="#1d1f22"/>
+    <stop offset="0.4" stop-color="#101215"/>
+    <stop offset="0.5" stop-color="#16171a"/>
+    <stop offset="0.56" stop-color="#292a2e"/>
+    <stop offset="0.688" stop-color="#4b4d51"/>
+    <stop offset="0.807" stop-color="#63666b"/>
+    <stop offset="0.915" stop-color="#72757b"/>
+    <stop offset="1" stop-color="#777a80"/>
+  </linearGradient>
+  <linearGradient id="xcode-original-U" gradientUnits="userSpaceOnUse" x1="69.064" y1="16.837" x2="91.026" y2="16.837" gradientTransform="matrix(1, 0, 0, 1, 146.973881, 110.256248)">
+    <stop offset="0" stop-color="#4a4d56"/>
+    <stop offset="1" stop-color="#29292d"/>
+  </linearGradient>
+  <linearGradient id="xcode-original-V" gradientUnits="userSpaceOnUse" x1="69.064" y1="11.697" x2="88.054" y2="11.697" gradientTransform="matrix(1, 0, 0, 1, 146.973881, 110.256248)">
+    <stop offset="0" stop-color="#767880"/>
+    <stop offset="0.41" stop-color="#0c0a0b"/>
+  </linearGradient>
+  <linearGradient id="xcode-original-W" gradientUnits="userSpaceOnUse" x1="116.332" y1="34.756" x2="123.707" y2="21.982" gradientTransform="matrix(1, 0, 0, 1, 146.973881, 110.256248)">
+    <stop offset="0" stop-color="#858997"/>
+    <stop offset="0.23" stop-color="#244668"/>
+    <stop offset="0.282" stop-color="#1a3249"/>
+    <stop offset="0.4" stop-color="#040506"/>
+    <stop offset="0.464" stop-color="#313236"/>
+    <stop offset="0.546" stop-color="#65656e"/>
+    <stop offset="0.607" stop-color="#868691"/>
+    <stop offset="0.64" stop-color="#92929e"/>
+  </linearGradient>
+  <path d="M 191.474 220.456 C 191.174 221.056 190.674 221.756 190.774 222.856 C 190.874 226.956 197.574 230.756 201.474 230.756 C 204.174 230.756 205.074 229.656 206.074 227.656 C 207.074 225.656 192.574 218.056 191.474 220.456 Z" fill="url(#xcode-original-N)" style="stroke-width: 1;" id="object-0"/>
+  <path d="M 237.574 135.356 C 237.574 135.356 247.874 137.856 248.674 138.556 C 249.474 139.256 247.374 143.256 246.974 143.856 C 243.674 147.856 233.374 169.956 233.374 169.956 L 223.874 164.556 C 223.874 164.556 232.374 148.756 235.374 143.156 C 237.274 139.356 237.574 135.356 237.574 135.356 Z" fill="url(#xcode-original-O)" style="stroke-width: 1;" id="object-1"/>
+  <path d="M 261.374 130.156 C 263.174 131.456 265.574 131.156 267.474 130.856 C 268.774 130.656 266.774 132.556 264.574 136.956 C 262.374 141.356 262.474 141.656 262.174 141.356 C 261.874 141.056 251.974 135.456 252.274 134.956 C 252.674 134.456 254.274 123.556 255.074 123.856 C 257.974 124.556 258.474 128.056 261.374 130.156 Z" fill="url(#xcode-original-P)" style="stroke-width: 1;" id="object-2"/>
+  <path d="M 245.974 142.456 C 246.674 141.356 249.874 134.556 254.974 134.556 C 257.274 134.556 261.674 140.356 262.074 141.156 C 262.374 141.856 261.374 144.656 260.874 143.356 C 260.274 141.856 257.774 138.656 255.074 138.656 C 252.374 138.656 248.674 141.756 247.774 142.856 C 246.874 143.856 245.274 143.556 245.974 142.456 Z" fill="url(#xcode-original-Q)" style="stroke-width: 1;" id="object-3"/>
+  <path d="M 245.774 142.056 C 246.274 141.256 248.574 137.756 249.674 136.656 C 250.774 135.556 253.574 132.656 255.974 132.256 C 258.374 131.856 260.874 136.756 260.074 137.756 C 259.474 138.456 258.474 137.656 257.274 136.656 C 256.074 135.756 255.274 133.956 251.474 136.856 C 250.174 137.856 248.874 138.656 245.874 142.956 C 245.074 144.056 245.274 142.856 245.774 142.056 Z" fill="url(#xcode-original-R)" style="stroke-width: 1;" id="object-4"/>
+  <path d="M 233.374 171.256 C 233.774 170.456 234.274 169.256 233.174 168.356 C 231.974 167.456 226.374 164.456 225.374 164.256 C 224.374 164.056 223.574 164.256 223.174 164.956 C 222.774 165.656 192.074 218.256 191.474 219.756 C 190.874 221.256 190.774 222.356 191.674 222.656 C 192.574 222.956 202.874 227.856 203.874 228.956 C 204.874 230.056 205.374 228.856 205.774 228.256 C 207.674 225.856 232.874 172.056 233.374 171.256 Z" fill="url(#xcode-original-S)" style="stroke-width: 1;" id="object-5"/>
+  <path d="M 246.474 141.856 C 246.974 141.156 248.174 139.156 249.674 137.356 C 250.674 136.156 256.074 133.556 257.274 129.356 C 257.974 127.056 256.874 124.756 255.374 123.756 C 250.274 120.656 241.474 115.756 228.574 115.756 C 219.874 115.756 216.174 118.656 216.174 118.656 L 220.574 118.656 L 235.874 124.656 L 237.774 132.656 C 237.774 132.656 237.974 135.356 237.074 138.456 C 236.474 140.956 236.274 142.456 235.374 144.956 C 236.074 145.256 237.674 144.156 239.474 144.656 C 241.074 145.056 242.074 147.256 243.174 145.956 C 245.074 143.456 245.674 142.956 246.474 141.856 Z" fill="url(#xcode-original-T)" style="stroke-width: 1;" id="object-6"/>
+  <path d="M 237.474 135.656 C 236.674 128.256 234.874 121.256 216.074 121.356 C 217.274 120.156 220.174 118.956 220.174 118.956 L 216.074 118.656 C 216.074 118.656 216.674 118.156 217.874 118.056 C 228.874 117.156 238.674 119.456 237.974 133.756 C 237.874 136.056 237.674 137.056 237.474 135.656 Z" fill="url(#xcode-original-U)" style="stroke-width: 1;" id="object-7"/>
+  <path d="M 216.074 121.356 C 217.374 120.856 219.174 120.556 222.574 120.756 C 226.774 120.956 232.074 122.556 234.274 124.556 C 235.374 125.556 235.274 124.756 234.074 123.456 C 230.974 119.856 226.274 119.056 220.174 118.956 C 219.474 118.856 217.174 120.156 216.074 121.356 Z" fill="url(#xcode-original-V)" style="stroke-width: 1;" id="object-8"/>
+  <path d="M 267.674 130.856 L 273.174 133.656 C 273.174 133.656 271.074 136.456 269.374 139.656 C 267.574 143.056 266.374 146.756 266.374 146.756 L 261.074 143.556 C 261.074 143.556 262.374 139.956 264.274 136.456 C 265.774 133.556 267.674 130.856 267.674 130.856 Z" fill="url(#xcode-original-W)" style="stroke-width: 1;" id="object-9"/>
+  <path d="M 273.174 133.656 C 273.574 133.856 272.274 136.956 270.374 140.556 C 268.474 144.156 266.674 146.956 266.374 146.756 C 265.974 146.556 267.274 143.456 269.174 139.856 C 270.974 136.256 272.774 133.456 273.174 133.656 Z" fill="#bfc0d0" style="stroke-width: 1;" id="object-10"/>
+</svg>

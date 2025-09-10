@@ -1,0 +1,23 @@
+keys;en
+xcodeLabel;Xcode
+brewLabel;Homebrew
+flutterLabel;Flutter
+fvmLabel;fvm
+shorebirdLabel;Shorebird
+nodeLabel;Node
+rustLabel;Rust
+settingsLabel;Settings
+deleteLabel;Delete
+cleanLabel;Clean
+noProjectsFound;No projects found
+xcodePanelAllDone;All done! 🧹 Nothing to clean up!
+xcodePanelArchives;Archives
+xcodePanelDerivedData;Derived Data
+xcodePaneliOSDeviceLogs;iOS Device Logs
+xcodePaneliOSDeviceSupport;iOS Device Support
+xcodePanelmacOSDeviceSupport;macOS Device Support
+fvmPanelUnusedVersions;Unused fvm versions in project paths
+shorebirdPanelCacheInfo;The Cache has size {size}.
+shorebirdPanelButtonCleanCache;Clean Cache
+shorebirdPanelCacheEmpty;The Cache is already cleaned.
+settingsPanelPathsScanProjects;Paths to scan for projects
