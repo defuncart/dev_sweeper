@@ -14,10 +14,11 @@ class NodePanel extends ConsumerWidget {
     return BasePanel(
       state: state,
       onData: (state) => ProjectsPanelData(
+        globalCacheSize: state.globalCacheSize,
         groupedProjects: state.groupedProjects,
         onShortenPath: ref.read(fileSystemManagerProvider).shortenPath,
-        onDelete: (value) => ref.read(nodeControllerProvider.notifier).deleteFolders(value),
-        onClean: (value) => ref.read(nodeControllerProvider.notifier).cleanFolders(value),
+        onCleanGlobalCache: () => ref.read(nodeControllerProvider.notifier).cleanGlobalCache(),
+        onCleanProjects: (value) => ref.read(nodeControllerProvider.notifier).cleanProjects(value),
       ),
     );
   }

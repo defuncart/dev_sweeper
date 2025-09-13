@@ -12,25 +12,32 @@ A desktop application to free up space used by developer tools.
 - Brew
     - brew update && brew upgrade && brew cleanup
 - Flutter
+    - Clean global packages cache
     - Find all Dart/Flutter projects and clean them
 - FVM
     - Find all unused FVM versions
 - Shorebird
     - Clean cache
 - Node
+    - Clean global npm cache
     - Find all npm projects and clean them
 - Rust
+    - Clean global crates cache
     - Find all rust projects and clean them
 
 ## Planned Functionality
 
+- Cocoapods
+    - Clean .cocoapods
+- Dart
+    - Clean .dartServer
 - Xcode
     - Remove Device Support for old OS versions for watchOS, tvOS, visionOS
 - Android AVD
     - List emulators, their size and potentially remove them
-- dart
-    - pub cache https://dart.dev/tools/pub/cmd/pub-cache
-- Node
-    - what is .npm/_cacache/content-v2 ?? >4GB
+- Rust
+    - .rustup/toolchains
+- Firebase
+    - emulators (.cache/firebase/emulators)
 
 Once functionality on macOS is complete, support for Linux/Windows may be added.

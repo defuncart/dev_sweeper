@@ -14,10 +14,11 @@ class FlutterPanel extends ConsumerWidget {
     return BasePanel(
       state: state,
       onData: (state) => ProjectsPanelData(
+        globalCacheSize: state.globalCacheSize,
         groupedProjects: state.groupedProjects,
         onShortenPath: ref.read(fileSystemManagerProvider).shortenPath,
-        onDelete: (value) => ref.read(flutterControllerProvider.notifier).deleteFolders(value),
-        onClean: (value) => ref.read(flutterControllerProvider.notifier).cleanFolders(value),
+        onCleanGlobalCache: () => ref.read(flutterControllerProvider.notifier).cleanGlobalCache(),
+        onCleanProjects: (value) => ref.read(flutterControllerProvider.notifier).cleanProjects(value),
       ),
     );
   }

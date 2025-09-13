@@ -14,10 +14,11 @@ class RustPanel extends ConsumerWidget {
     return BasePanel(
       state: state,
       onData: (state) => ProjectsPanelData(
+        globalCacheSize: state.globalCacheSize,
         groupedProjects: state.groupedProjects,
         onShortenPath: ref.read(fileSystemManagerProvider).shortenPath,
-        onDelete: (value) => ref.read(rustControllerProvider.notifier).deleteFolders(value),
-        onClean: (value) => ref.read(rustControllerProvider.notifier).cleanFolders(value),
+        onCleanGlobalCache: () => ref.read(rustControllerProvider.notifier).cleanGlobalCache(),
+        onCleanProjects: (value) => ref.read(rustControllerProvider.notifier).cleanProjects(value),
       ),
     );
   }

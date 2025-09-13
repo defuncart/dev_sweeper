@@ -77,6 +77,14 @@ class FileSystemManager {
     }
   }
 
+  Future<void> _deleteDirectory(String path) async {
+    final dir = Directory(path);
+    if (await dir.exists()) {
+      log('Deleting ${dir.path}...');
+      await dir.delete(recursive: true);
+    }
+  }
+
   Future<bool> get isXcodeInstalled async {
     if (defaultTargetPlatform != TargetPlatform.macOS) {
       return false;
@@ -142,6 +150,22 @@ class FileSystemManager {
           environment: _flutterEnvPathRaw,
         ) ||
         await isFVMInstalled;
+  }
+
+  Future<FSEntityInfo> getDartPubCacheInfo() async {
+    // TODO windows %APPDATA%\Pub\Cache
+    final result = await _dfs.getDirSize(p.join(_userPath, '.pub-cache'));
+    return FSEntityInfo(path: result.path, len: result.len);
+  }
+
+  Future<void> cleanDartPubCache() async {
+    log('Cleaning dart pub cache...');
+
+    await Process.run(
+      'dart',
+      ['pub', 'cache', 'clean', '--force'],
+      // environment: _flutterEnvPath,
+    );
   }
 
   Future<List<FSEntityInfo>> getAllFlutterProjects(String startPath) async {
@@ -301,14 +325,33 @@ class FileSystemManager {
     return FSEntityInfo(path: result.path, len: result.len);
   }
 
-  Future<void> shorebirdClearCache() => Process.run(
-    'shorebird',
-    ['cache', 'clean'],
-    // environment: _shorebirdEnvPath,
-  );
+  Future<void> shorebirdClearCache() async {
+    log('Cleaning shorebird cache...');
+
+    await Process.run(
+      'shorebird',
+      ['cache', 'clean'],
+      // environment: _shorebirdEnvPath,
+    );
+  }
 
   Future<bool> get isNodeInstalled async {
     return _canRunProcess('node');
+  }
+
+  Future<FSEntityInfo> getNodeCacheInfo() async {
+    // TODO windows C:\Users\<USER>\AppData\Roaming\npm-cache\_cacache\content-v2
+    final result = await _dfs.getDirSize(p.join(_userPath, '.npm/_cacache/content-v2'));
+    return FSEntityInfo(path: result.path, len: result.len);
+  }
+
+  Future<void> cleanNodeCache() async {
+    log('Cleaning node cache...');
+    await Process.run(
+      'npm',
+      ['cache', 'clean', '--force'],
+      environment: _envPath,
+    );
   }
 
   Future<List<FSEntityInfo>> getAllNodeProjects(String startPath) async {
@@ -328,16 +371,28 @@ class FileSystemManager {
   Future<void> cleanNodeProjects(Iterable<String> paths) async {
     for (final path in paths) {
       // rm -rf node_modules/
-      final dir = Directory(p.join(path, 'node_modules'));
-      if (await dir.exists()) {
-        log('Deleting ${dir.path}...');
-        await dir.delete(recursive: true);
-      }
+      await _deleteDirectory(p.join(path, 'node_modules'));
     }
   }
 
   Future<bool> get isRustInstalled async {
     return _canRunProcess('rustup', environment: _rustEnvPathRaw);
+  }
+
+  Future<FSEntityInfo> getRustCacheInfo() async {
+    // TODO windows %APPDATA%\.cargo
+    final result1 = await _dfs.getDirSize(p.join(_userPath, '.cargo/registry'));
+    final result2 = await _dfs.getDirSize(p.join(_userPath, '.cargo/git'));
+    return FSEntityInfo(path: '', len: result1.len + result2.len);
+  }
+
+  Future<void> cleanRustCache() async {
+    log('Cleaning rust pub cache...');
+
+    // rm -rf ~/.cargo/registry
+    // rm -rf ~/.cargo/git
+    await _deleteDirectory(p.join(_userPath, '.cargo/registry'));
+    await _deleteDirectory(p.join(_userPath, '.cargo/git'));
   }
 
   Future<List<FSEntityInfo>> getAllRustProjects(String startPath) async {

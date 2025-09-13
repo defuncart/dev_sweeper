@@ -159,11 +159,12 @@ class FlutterController extends _$FlutterController {
     }
 
     return FlutterState(
+      globalCacheSize: (await fs.getDartPubCacheInfo()).len,
       groupedProjects: groupedProjects,
     );
   }
 
-  Future<void> deleteFolders(Iterable<String> paths) async {
+  Future<void> deleteProjects(Iterable<String> paths) async {
     state = const AsyncValue.loading();
 
     final stopwatch = Stopwatch()..start();
@@ -175,14 +176,26 @@ class FlutterController extends _$FlutterController {
     state = await AsyncValue.guard(_get);
   }
 
-  Future<void> cleanFolders(Iterable<String> paths) async {
+  Future<void> cleanGlobalCache() async {
+    state = const AsyncValue.loading();
+
+    final stopwatch = Stopwatch()..start();
+    final fs = ref.read(fileSystemManagerProvider);
+    await fs.cleanDartPubCache();
+    stopwatch.stop();
+    dev.log('Flutter global clean took ${stopwatch.elapsed}');
+
+    state = await AsyncValue.guard(_get);
+  }
+
+  Future<void> cleanProjects(Iterable<String> paths) async {
     state = const AsyncValue.loading();
 
     final stopwatch = Stopwatch()..start();
     final fs = ref.read(fileSystemManagerProvider);
     await fs.cleanFlutterProjects(paths);
     stopwatch.stop();
-    dev.log('Flutter clean took ${stopwatch.elapsed}');
+    dev.log('Flutter projects clean took ${stopwatch.elapsed}');
 
     state = await AsyncValue.guard(_get);
   }
@@ -191,6 +204,7 @@ class FlutterController extends _$FlutterController {
 @freezed
 sealed class FlutterState with _$FlutterState {
   const factory FlutterState({
+    required BigInt globalCacheSize,
     required List<FilesInDirResult> groupedProjects,
   }) = _FlutterState;
 }
@@ -282,11 +296,12 @@ class NodeController extends _$NodeController {
     }
 
     return NodeState(
+      globalCacheSize: (await fs.getNodeCacheInfo()).len,
       groupedProjects: groupedProjects,
     );
   }
 
-  Future<void> deleteFolders(Iterable<String> paths) async {
+  Future<void> deleteProjects(Iterable<String> paths) async {
     state = const AsyncValue.loading();
 
     final stopwatch = Stopwatch()..start();
@@ -298,14 +313,26 @@ class NodeController extends _$NodeController {
     state = await AsyncValue.guard(_get);
   }
 
-  Future<void> cleanFolders(Iterable<String> paths) async {
+  Future<void> cleanGlobalCache() async {
+    state = const AsyncValue.loading();
+
+    final stopwatch = Stopwatch()..start();
+    final fs = ref.read(fileSystemManagerProvider);
+    await fs.cleanNodeCache();
+    stopwatch.stop();
+    dev.log('Node global clean took ${stopwatch.elapsed}');
+
+    state = await AsyncValue.guard(_get);
+  }
+
+  Future<void> cleanProjects(Iterable<String> paths) async {
     state = const AsyncValue.loading();
 
     final stopwatch = Stopwatch()..start();
     final fs = ref.read(fileSystemManagerProvider);
     await fs.cleanNodeProjects(paths);
     stopwatch.stop();
-    dev.log('Node clean took ${stopwatch.elapsed}');
+    dev.log('Node projects clean took ${stopwatch.elapsed}');
 
     state = await AsyncValue.guard(_get);
   }
@@ -314,6 +341,7 @@ class NodeController extends _$NodeController {
 @freezed
 sealed class NodeState with _$NodeState {
   const factory NodeState({
+    required BigInt globalCacheSize,
     required List<FilesInDirResult> groupedProjects,
   }) = _NodeState;
 }
@@ -343,11 +371,12 @@ class RustController extends _$RustController {
     }
 
     return RustState(
+      globalCacheSize: (await fs.getRustCacheInfo()).len,
       groupedProjects: groupedProjects,
     );
   }
 
-  Future<void> deleteFolders(Iterable<String> paths) async {
+  Future<void> deleteProjects(Iterable<String> paths) async {
     state = const AsyncValue.loading();
 
     final stopwatch = Stopwatch()..start();
@@ -359,14 +388,26 @@ class RustController extends _$RustController {
     state = await AsyncValue.guard(_get);
   }
 
-  Future<void> cleanFolders(Iterable<String> paths) async {
+  Future<void> cleanGlobalCache() async {
+    state = const AsyncValue.loading();
+
+    final stopwatch = Stopwatch()..start();
+    final fs = ref.read(fileSystemManagerProvider);
+    await fs.cleanRustCache();
+    stopwatch.stop();
+    dev.log('Rust global clean took ${stopwatch.elapsed}');
+
+    state = await AsyncValue.guard(_get);
+  }
+
+  Future<void> cleanProjects(Iterable<String> paths) async {
     state = const AsyncValue.loading();
 
     final stopwatch = Stopwatch()..start();
     final fs = ref.read(fileSystemManagerProvider);
     await fs.cleanRustProjects(paths);
     stopwatch.stop();
-    dev.log('Rust clean took ${stopwatch.elapsed}');
+    dev.log('Rust projects clean took ${stopwatch.elapsed}');
 
     state = await AsyncValue.guard(_get);
   }
@@ -375,6 +416,7 @@ class RustController extends _$RustController {
 @freezed
 sealed class RustState with _$RustState {
   const factory RustState({
+    required BigInt globalCacheSize,
     required List<FilesInDirResult> groupedProjects,
   }) = _RustState;
 }

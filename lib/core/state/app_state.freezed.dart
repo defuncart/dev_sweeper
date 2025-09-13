@@ -547,7 +547,7 @@ as FolderResultInfo,
 /// @nodoc
 mixin _$FlutterState {
 
- List<FilesInDirResult> get groupedProjects;
+ BigInt get globalCacheSize; List<FilesInDirResult> get groupedProjects;
 /// Create a copy of FlutterState
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -558,16 +558,16 @@ $FlutterStateCopyWith<FlutterState> get copyWith => _$FlutterStateCopyWithImpl<F
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is FlutterState&&const DeepCollectionEquality().equals(other.groupedProjects, groupedProjects));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is FlutterState&&(identical(other.globalCacheSize, globalCacheSize) || other.globalCacheSize == globalCacheSize)&&const DeepCollectionEquality().equals(other.groupedProjects, groupedProjects));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(groupedProjects));
+int get hashCode => Object.hash(runtimeType,globalCacheSize,const DeepCollectionEquality().hash(groupedProjects));
 
 @override
 String toString() {
-  return 'FlutterState(groupedProjects: $groupedProjects)';
+  return 'FlutterState(globalCacheSize: $globalCacheSize, groupedProjects: $groupedProjects)';
 }
 
 
@@ -578,7 +578,7 @@ abstract mixin class $FlutterStateCopyWith<$Res>  {
   factory $FlutterStateCopyWith(FlutterState value, $Res Function(FlutterState) _then) = _$FlutterStateCopyWithImpl;
 @useResult
 $Res call({
- List<FilesInDirResult> groupedProjects
+ BigInt globalCacheSize, List<FilesInDirResult> groupedProjects
 });
 
 
@@ -595,9 +595,10 @@ class _$FlutterStateCopyWithImpl<$Res>
 
 /// Create a copy of FlutterState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? groupedProjects = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? globalCacheSize = null,Object? groupedProjects = null,}) {
   return _then(_self.copyWith(
-groupedProjects: null == groupedProjects ? _self.groupedProjects : groupedProjects // ignore: cast_nullable_to_non_nullable
+globalCacheSize: null == globalCacheSize ? _self.globalCacheSize : globalCacheSize // ignore: cast_nullable_to_non_nullable
+as BigInt,groupedProjects: null == groupedProjects ? _self.groupedProjects : groupedProjects // ignore: cast_nullable_to_non_nullable
 as List<FilesInDirResult>,
   ));
 }
@@ -680,10 +681,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<FilesInDirResult> groupedProjects)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( BigInt globalCacheSize,  List<FilesInDirResult> groupedProjects)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _FlutterState() when $default != null:
-return $default(_that.groupedProjects);case _:
+return $default(_that.globalCacheSize,_that.groupedProjects);case _:
   return orElse();
 
 }
@@ -701,10 +702,10 @@ return $default(_that.groupedProjects);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<FilesInDirResult> groupedProjects)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( BigInt globalCacheSize,  List<FilesInDirResult> groupedProjects)  $default,) {final _that = this;
 switch (_that) {
 case _FlutterState():
-return $default(_that.groupedProjects);}
+return $default(_that.globalCacheSize,_that.groupedProjects);}
 }
 /// A variant of `when` that fallback to returning `null`
 ///
@@ -718,10 +719,10 @@ return $default(_that.groupedProjects);}
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<FilesInDirResult> groupedProjects)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( BigInt globalCacheSize,  List<FilesInDirResult> groupedProjects)?  $default,) {final _that = this;
 switch (_that) {
 case _FlutterState() when $default != null:
-return $default(_that.groupedProjects);case _:
+return $default(_that.globalCacheSize,_that.groupedProjects);case _:
   return null;
 
 }
@@ -733,9 +734,10 @@ return $default(_that.groupedProjects);case _:
 
 
 class _FlutterState implements FlutterState {
-  const _FlutterState({required final  List<FilesInDirResult> groupedProjects}): _groupedProjects = groupedProjects;
+  const _FlutterState({required this.globalCacheSize, required final  List<FilesInDirResult> groupedProjects}): _groupedProjects = groupedProjects;
   
 
+@override final  BigInt globalCacheSize;
  final  List<FilesInDirResult> _groupedProjects;
 @override List<FilesInDirResult> get groupedProjects {
   if (_groupedProjects is EqualUnmodifiableListView) return _groupedProjects;
@@ -754,16 +756,16 @@ _$FlutterStateCopyWith<_FlutterState> get copyWith => __$FlutterStateCopyWithImp
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _FlutterState&&const DeepCollectionEquality().equals(other._groupedProjects, _groupedProjects));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _FlutterState&&(identical(other.globalCacheSize, globalCacheSize) || other.globalCacheSize == globalCacheSize)&&const DeepCollectionEquality().equals(other._groupedProjects, _groupedProjects));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_groupedProjects));
+int get hashCode => Object.hash(runtimeType,globalCacheSize,const DeepCollectionEquality().hash(_groupedProjects));
 
 @override
 String toString() {
-  return 'FlutterState(groupedProjects: $groupedProjects)';
+  return 'FlutterState(globalCacheSize: $globalCacheSize, groupedProjects: $groupedProjects)';
 }
 
 
@@ -774,7 +776,7 @@ abstract mixin class _$FlutterStateCopyWith<$Res> implements $FlutterStateCopyWi
   factory _$FlutterStateCopyWith(_FlutterState value, $Res Function(_FlutterState) _then) = __$FlutterStateCopyWithImpl;
 @override @useResult
 $Res call({
- List<FilesInDirResult> groupedProjects
+ BigInt globalCacheSize, List<FilesInDirResult> groupedProjects
 });
 
 
@@ -791,9 +793,10 @@ class __$FlutterStateCopyWithImpl<$Res>
 
 /// Create a copy of FlutterState
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? groupedProjects = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? globalCacheSize = null,Object? groupedProjects = null,}) {
   return _then(_FlutterState(
-groupedProjects: null == groupedProjects ? _self._groupedProjects : groupedProjects // ignore: cast_nullable_to_non_nullable
+globalCacheSize: null == globalCacheSize ? _self.globalCacheSize : globalCacheSize // ignore: cast_nullable_to_non_nullable
+as BigInt,groupedProjects: null == groupedProjects ? _self._groupedProjects : groupedProjects // ignore: cast_nullable_to_non_nullable
 as List<FilesInDirResult>,
   ));
 }
@@ -1064,7 +1067,7 @@ as List<FMVVersion>,
 /// @nodoc
 mixin _$NodeState {
 
- List<FilesInDirResult> get groupedProjects;
+ BigInt get globalCacheSize; List<FilesInDirResult> get groupedProjects;
 /// Create a copy of NodeState
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -1075,16 +1078,16 @@ $NodeStateCopyWith<NodeState> get copyWith => _$NodeStateCopyWithImpl<NodeState>
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is NodeState&&const DeepCollectionEquality().equals(other.groupedProjects, groupedProjects));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is NodeState&&(identical(other.globalCacheSize, globalCacheSize) || other.globalCacheSize == globalCacheSize)&&const DeepCollectionEquality().equals(other.groupedProjects, groupedProjects));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(groupedProjects));
+int get hashCode => Object.hash(runtimeType,globalCacheSize,const DeepCollectionEquality().hash(groupedProjects));
 
 @override
 String toString() {
-  return 'NodeState(groupedProjects: $groupedProjects)';
+  return 'NodeState(globalCacheSize: $globalCacheSize, groupedProjects: $groupedProjects)';
 }
 
 
@@ -1095,7 +1098,7 @@ abstract mixin class $NodeStateCopyWith<$Res>  {
   factory $NodeStateCopyWith(NodeState value, $Res Function(NodeState) _then) = _$NodeStateCopyWithImpl;
 @useResult
 $Res call({
- List<FilesInDirResult> groupedProjects
+ BigInt globalCacheSize, List<FilesInDirResult> groupedProjects
 });
 
 
@@ -1112,9 +1115,10 @@ class _$NodeStateCopyWithImpl<$Res>
 
 /// Create a copy of NodeState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? groupedProjects = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? globalCacheSize = null,Object? groupedProjects = null,}) {
   return _then(_self.copyWith(
-groupedProjects: null == groupedProjects ? _self.groupedProjects : groupedProjects // ignore: cast_nullable_to_non_nullable
+globalCacheSize: null == globalCacheSize ? _self.globalCacheSize : globalCacheSize // ignore: cast_nullable_to_non_nullable
+as BigInt,groupedProjects: null == groupedProjects ? _self.groupedProjects : groupedProjects // ignore: cast_nullable_to_non_nullable
 as List<FilesInDirResult>,
   ));
 }
@@ -1197,10 +1201,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<FilesInDirResult> groupedProjects)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( BigInt globalCacheSize,  List<FilesInDirResult> groupedProjects)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _NodeState() when $default != null:
-return $default(_that.groupedProjects);case _:
+return $default(_that.globalCacheSize,_that.groupedProjects);case _:
   return orElse();
 
 }
@@ -1218,10 +1222,10 @@ return $default(_that.groupedProjects);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<FilesInDirResult> groupedProjects)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( BigInt globalCacheSize,  List<FilesInDirResult> groupedProjects)  $default,) {final _that = this;
 switch (_that) {
 case _NodeState():
-return $default(_that.groupedProjects);}
+return $default(_that.globalCacheSize,_that.groupedProjects);}
 }
 /// A variant of `when` that fallback to returning `null`
 ///
@@ -1235,10 +1239,10 @@ return $default(_that.groupedProjects);}
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<FilesInDirResult> groupedProjects)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( BigInt globalCacheSize,  List<FilesInDirResult> groupedProjects)?  $default,) {final _that = this;
 switch (_that) {
 case _NodeState() when $default != null:
-return $default(_that.groupedProjects);case _:
+return $default(_that.globalCacheSize,_that.groupedProjects);case _:
   return null;
 
 }
@@ -1250,9 +1254,10 @@ return $default(_that.groupedProjects);case _:
 
 
 class _NodeState implements NodeState {
-  const _NodeState({required final  List<FilesInDirResult> groupedProjects}): _groupedProjects = groupedProjects;
+  const _NodeState({required this.globalCacheSize, required final  List<FilesInDirResult> groupedProjects}): _groupedProjects = groupedProjects;
   
 
+@override final  BigInt globalCacheSize;
  final  List<FilesInDirResult> _groupedProjects;
 @override List<FilesInDirResult> get groupedProjects {
   if (_groupedProjects is EqualUnmodifiableListView) return _groupedProjects;
@@ -1271,16 +1276,16 @@ _$NodeStateCopyWith<_NodeState> get copyWith => __$NodeStateCopyWithImpl<_NodeSt
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _NodeState&&const DeepCollectionEquality().equals(other._groupedProjects, _groupedProjects));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _NodeState&&(identical(other.globalCacheSize, globalCacheSize) || other.globalCacheSize == globalCacheSize)&&const DeepCollectionEquality().equals(other._groupedProjects, _groupedProjects));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_groupedProjects));
+int get hashCode => Object.hash(runtimeType,globalCacheSize,const DeepCollectionEquality().hash(_groupedProjects));
 
 @override
 String toString() {
-  return 'NodeState(groupedProjects: $groupedProjects)';
+  return 'NodeState(globalCacheSize: $globalCacheSize, groupedProjects: $groupedProjects)';
 }
 
 
@@ -1291,7 +1296,7 @@ abstract mixin class _$NodeStateCopyWith<$Res> implements $NodeStateCopyWith<$Re
   factory _$NodeStateCopyWith(_NodeState value, $Res Function(_NodeState) _then) = __$NodeStateCopyWithImpl;
 @override @useResult
 $Res call({
- List<FilesInDirResult> groupedProjects
+ BigInt globalCacheSize, List<FilesInDirResult> groupedProjects
 });
 
 
@@ -1308,9 +1313,10 @@ class __$NodeStateCopyWithImpl<$Res>
 
 /// Create a copy of NodeState
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? groupedProjects = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? globalCacheSize = null,Object? groupedProjects = null,}) {
   return _then(_NodeState(
-groupedProjects: null == groupedProjects ? _self._groupedProjects : groupedProjects // ignore: cast_nullable_to_non_nullable
+globalCacheSize: null == globalCacheSize ? _self.globalCacheSize : globalCacheSize // ignore: cast_nullable_to_non_nullable
+as BigInt,groupedProjects: null == groupedProjects ? _self._groupedProjects : groupedProjects // ignore: cast_nullable_to_non_nullable
 as List<FilesInDirResult>,
   ));
 }
@@ -1321,7 +1327,7 @@ as List<FilesInDirResult>,
 /// @nodoc
 mixin _$RustState {
 
- List<FilesInDirResult> get groupedProjects;
+ BigInt get globalCacheSize; List<FilesInDirResult> get groupedProjects;
 /// Create a copy of RustState
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -1332,16 +1338,16 @@ $RustStateCopyWith<RustState> get copyWith => _$RustStateCopyWithImpl<RustState>
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RustState&&const DeepCollectionEquality().equals(other.groupedProjects, groupedProjects));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RustState&&(identical(other.globalCacheSize, globalCacheSize) || other.globalCacheSize == globalCacheSize)&&const DeepCollectionEquality().equals(other.groupedProjects, groupedProjects));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(groupedProjects));
+int get hashCode => Object.hash(runtimeType,globalCacheSize,const DeepCollectionEquality().hash(groupedProjects));
 
 @override
 String toString() {
-  return 'RustState(groupedProjects: $groupedProjects)';
+  return 'RustState(globalCacheSize: $globalCacheSize, groupedProjects: $groupedProjects)';
 }
 
 
@@ -1352,7 +1358,7 @@ abstract mixin class $RustStateCopyWith<$Res>  {
   factory $RustStateCopyWith(RustState value, $Res Function(RustState) _then) = _$RustStateCopyWithImpl;
 @useResult
 $Res call({
- List<FilesInDirResult> groupedProjects
+ BigInt globalCacheSize, List<FilesInDirResult> groupedProjects
 });
 
 
@@ -1369,9 +1375,10 @@ class _$RustStateCopyWithImpl<$Res>
 
 /// Create a copy of RustState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? groupedProjects = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? globalCacheSize = null,Object? groupedProjects = null,}) {
   return _then(_self.copyWith(
-groupedProjects: null == groupedProjects ? _self.groupedProjects : groupedProjects // ignore: cast_nullable_to_non_nullable
+globalCacheSize: null == globalCacheSize ? _self.globalCacheSize : globalCacheSize // ignore: cast_nullable_to_non_nullable
+as BigInt,groupedProjects: null == groupedProjects ? _self.groupedProjects : groupedProjects // ignore: cast_nullable_to_non_nullable
 as List<FilesInDirResult>,
   ));
 }
@@ -1454,10 +1461,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<FilesInDirResult> groupedProjects)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( BigInt globalCacheSize,  List<FilesInDirResult> groupedProjects)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _RustState() when $default != null:
-return $default(_that.groupedProjects);case _:
+return $default(_that.globalCacheSize,_that.groupedProjects);case _:
   return orElse();
 
 }
@@ -1475,10 +1482,10 @@ return $default(_that.groupedProjects);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<FilesInDirResult> groupedProjects)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( BigInt globalCacheSize,  List<FilesInDirResult> groupedProjects)  $default,) {final _that = this;
 switch (_that) {
 case _RustState():
-return $default(_that.groupedProjects);}
+return $default(_that.globalCacheSize,_that.groupedProjects);}
 }
 /// A variant of `when` that fallback to returning `null`
 ///
@@ -1492,10 +1499,10 @@ return $default(_that.groupedProjects);}
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<FilesInDirResult> groupedProjects)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( BigInt globalCacheSize,  List<FilesInDirResult> groupedProjects)?  $default,) {final _that = this;
 switch (_that) {
 case _RustState() when $default != null:
-return $default(_that.groupedProjects);case _:
+return $default(_that.globalCacheSize,_that.groupedProjects);case _:
   return null;
 
 }
@@ -1507,9 +1514,10 @@ return $default(_that.groupedProjects);case _:
 
 
 class _RustState implements RustState {
-  const _RustState({required final  List<FilesInDirResult> groupedProjects}): _groupedProjects = groupedProjects;
+  const _RustState({required this.globalCacheSize, required final  List<FilesInDirResult> groupedProjects}): _groupedProjects = groupedProjects;
   
 
+@override final  BigInt globalCacheSize;
  final  List<FilesInDirResult> _groupedProjects;
 @override List<FilesInDirResult> get groupedProjects {
   if (_groupedProjects is EqualUnmodifiableListView) return _groupedProjects;
@@ -1528,16 +1536,16 @@ _$RustStateCopyWith<_RustState> get copyWith => __$RustStateCopyWithImpl<_RustSt
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RustState&&const DeepCollectionEquality().equals(other._groupedProjects, _groupedProjects));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RustState&&(identical(other.globalCacheSize, globalCacheSize) || other.globalCacheSize == globalCacheSize)&&const DeepCollectionEquality().equals(other._groupedProjects, _groupedProjects));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_groupedProjects));
+int get hashCode => Object.hash(runtimeType,globalCacheSize,const DeepCollectionEquality().hash(_groupedProjects));
 
 @override
 String toString() {
-  return 'RustState(groupedProjects: $groupedProjects)';
+  return 'RustState(globalCacheSize: $globalCacheSize, groupedProjects: $groupedProjects)';
 }
 
 
@@ -1548,7 +1556,7 @@ abstract mixin class _$RustStateCopyWith<$Res> implements $RustStateCopyWith<$Re
   factory _$RustStateCopyWith(_RustState value, $Res Function(_RustState) _then) = __$RustStateCopyWithImpl;
 @override @useResult
 $Res call({
- List<FilesInDirResult> groupedProjects
+ BigInt globalCacheSize, List<FilesInDirResult> groupedProjects
 });
 
 
@@ -1565,9 +1573,10 @@ class __$RustStateCopyWithImpl<$Res>
 
 /// Create a copy of RustState
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? groupedProjects = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? globalCacheSize = null,Object? groupedProjects = null,}) {
   return _then(_RustState(
-groupedProjects: null == groupedProjects ? _self._groupedProjects : groupedProjects // ignore: cast_nullable_to_non_nullable
+globalCacheSize: null == globalCacheSize ? _self.globalCacheSize : globalCacheSize // ignore: cast_nullable_to_non_nullable
+as BigInt,groupedProjects: null == groupedProjects ? _self._groupedProjects : groupedProjects // ignore: cast_nullable_to_non_nullable
 as List<FilesInDirResult>,
   ));
 }

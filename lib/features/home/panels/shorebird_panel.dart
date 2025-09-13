@@ -23,7 +23,7 @@ class ShorebirdPanel extends ConsumerWidget {
                 children: [
                   Text(context.l10n.shorebirdPanelCacheInfo(state.displayString)),
                   AdaptiveButton(
-                    title: context.l10n.shorebirdPanelButtonCleanCache,
+                    title: context.l10n.cleanCacheLabel,
                     onPressed: () => ref.read(shorebirdControllerProvider.notifier).clearCache(),
                   ),
                 ],

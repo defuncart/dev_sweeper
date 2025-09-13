@@ -202,7 +202,7 @@ final class FlutterControllerProvider extends $AsyncNotifierProvider<FlutterCont
   FlutterController create() => FlutterController();
 }
 
-String _$flutterControllerHash() => r'2a7800042ebc133cf622f75df1f28a4c50a8f787';
+String _$flutterControllerHash() => r'535fc4daae97529aa5b5165b8bbb68906cc584b2';
 
 abstract class _$FlutterController extends $AsyncNotifier<FlutterState> {
   FutureOr<FlutterState> build();
@@ -329,7 +329,7 @@ final class NodeControllerProvider extends $AsyncNotifierProvider<NodeController
   NodeController create() => NodeController();
 }
 
-String _$nodeControllerHash() => r'11ac835fee6cadb5bad392587461d3846502053f';
+String _$nodeControllerHash() => r'a59a5ad2bc548449cd459e0b4185a5f547890fa1';
 
 abstract class _$NodeController extends $AsyncNotifier<NodeState> {
   FutureOr<NodeState> build();
@@ -373,7 +373,7 @@ final class RustControllerProvider extends $AsyncNotifierProvider<RustController
   RustController create() => RustController();
 }
 
-String _$rustControllerHash() => r'9cd4ba293591fe2c7330508115da55d312a9fd38';
+String _$rustControllerHash() => r'5cea9411c122bc045922f2289ab9e45d89f2e9ea';
 
 abstract class _$RustController extends $AsyncNotifier<RustState> {
   FutureOr<RustState> build();
